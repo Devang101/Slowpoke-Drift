@@ -1,0 +1,33 @@
+Shader.source[document.currentScript.src.split('js/shaders/')[1]] = `
+precision highp float;
+
+varying vec3 worldNormal;
+varying vec3 worldPos;
+
+float snoise(vec3 r) {
+  vec3 s = vec3(7502, 22777, 4767);
+  float w = 0.0;
+  for(int i=0; i<16; i++) {
+    w += sin( dot(s - vec3(32768, 32768, 32768),
+            r * 40.0) / 65536.0);
+    s = mod(s, 32768.0) * 2.0 + floor(s / 32768.0);
+  }
+  return w / 32.0 + 0.5;
+}
+
+vec3 getColor(vec3 position){
+    float scale = 10.0;
+    float turbulence = 20.0;
+    float period = 50.0;
+    float sharpness = 6.0;
+    float noise = snoise(position * scale);
+    float w = position.x * period + pow(noise, sharpness)*turbulence;
+    w = pow(sin(w)*0.5+0.5, 4.0);
+    // use smooth sine for soft stripes
+    return vec3(0, 0, 1) * w + vec3(1, 1, 1) * (1.0-w);
+}
+
+void main(void) {
+  gl_FragColor = vec4(getColor(worldPos),1);
+}
+`;
