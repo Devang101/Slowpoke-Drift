@@ -10,8 +10,8 @@ RULES:
 5. Kill as many slowpokes as possible without getting eaten.
 
 Controls:
-SPACE - Shoot 
-UP ARROW - Move Forward
-DOWN ARROW - Move Backward
-LEFT ARROW - Turn Left
-RIGHT ARROW - Turn Right
+  SPACE - Shoot 
+  UP ARROW - Move Forward
+  DOWN ARROW - Move Backward
+  LEFT ARROW - Turn Left
+  RIGHT ARROW - Turn Right
