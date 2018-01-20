@@ -2,6 +2,8 @@
 
 I created this game as a final project for my graphics class at AIT: http://www.ait-budapest.com/ .
 
+Click the link to play: https://devang101.github.io/Slowpoke-Drift/
+
 RULES:
 1. Do not touch the Slowpokes! (They will eat you).
 2. Survive by driving around the slowpokes and shooting them.
